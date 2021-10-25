@@ -150,9 +150,9 @@ def handler1(event, context):
 
     df1 = pd.DataFrame(dict1) 
     df1.to_csv('/tmp/tiempo.csv')
-    url11 = "Headlines/news/periodico=El Tiempo""/year="+str(year)+"/month="+str(month)+"/day="+str(day)+"/Eltiempo.csv"
+    url11 = "Headlines/news/periodico=El Tiempo""/year="+str(tiempo.year)+"/month="+str(tiempo.month)+"/day="+str(tiempo.day)+"/Eltiempo.csv"
     s3.upload_file("/tmp/tiempo.csv","parcial2-punto2-2-02091999",url11)
-    url12 = "Headlines/news/periodico=El Espectador""/year="+str(year)+"/month="+str(month)+"/day="+str(day)+"/espectador.csv"
+    url12 = "Headlines/news/periodico=El Espectador""/year="+str(tiempo.year)+"/month="+str(tiempo.month)+"/day="+str(tiempo.day)+"/espectador.csv"
     s3.upload_file("/tmp/espectador.csv","parcial2-punto2-2-02091999",url12)
 
 def handler2(event, context):
