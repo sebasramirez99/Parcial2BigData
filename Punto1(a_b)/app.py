@@ -25,7 +25,6 @@ def handler(event, context):
 	optener("Ecopetrol",tiempo,bucket,s3,"https://query1.finance.yahoo.com/v7/finance/download/EC?period1=1634774400&period2=1634860800&interval=1d&events=history&includeAdjustedClose=true")
 	optener("GrupoAval",tiempo,bucket,s3,"https://query1.finance.yahoo.com/v7/finance/download/AVAL?period1=1634774400&period2=1634860800&interval=1d&events=history&includeAdjustedClose=true")
 	optener("CementosArgos",tiempo,bucket,s3,"https://query1.finance.yahoo.com/v7/finance/download/CMTOY?period1=1634774400&period2=1634860800&interval=1d&events=history&includeAdjustedClose=true")
-
 	return {
 	'statusCode':200,
 	'body': json.dumps('Hello from Lambda')

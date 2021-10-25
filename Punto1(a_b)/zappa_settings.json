@@ -1,0 +1,21 @@
+{
+    "dev": {
+        "app_function": "app.handler",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "project_name": "parcial2",
+        "runtime": "python3.8",
+        "s3_bucket": "parcial-zappa02091999",
+	    "keep_warm": false,
+	    "apigateway_enabled":false,
+        "events": [{
+            "function": "app.handler",
+            "event_source": {
+                "arn": "arn:aws:s3:::parcial2-punto1-02091999",
+                "events": [
+                    "s3:ObjectCreated:*"
+                ]
+            }
+        }]
+    }
+}
