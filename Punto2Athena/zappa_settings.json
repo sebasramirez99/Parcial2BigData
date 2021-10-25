@@ -1,0 +1,29 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "project_name": "punto2athena",
+        "runtime": "python3.8",
+        "s3_bucket": "parcial-zappa02091999",
+        "keep_warm": false,
+	    "apigateway_enabled":false,
+        "events": [{
+            "function": "app.handler1",
+            "event_source": {
+                "arn": "arn:aws:s3:::parcial2-punto2-02091999",
+                "events": [
+                    "s3:ObjectCreated:*"
+                ]
+            }
+        },{
+            "function": "app.handler2",
+            "event_source": {
+                  "arn":  "arn:aws:s3:::parcial2-punto2-2-02091999",
+                  "events": [
+                    "s3:ObjectCreated:*"              ]
+               }
+            }
+        ]
+       
+    }
+}
